@@ -15,7 +15,7 @@ const LoginForm = () => {
     const email = form.email.value;
     const password = form.password.value;
     loginUser(email, password)
-      .then(async (result) => {
+      .then((result) => {
         const user = result.user;
         setUser(user);
         toast.success("Login Successful.");
@@ -41,7 +41,7 @@ const LoginForm = () => {
         </label>
         <a
           href="#"
-          className="text-blue-700 dark:text-blue-500 hover:underline text-sm"
+          className="text-green-700 dark:text-green-500 hover:underline text-sm"
         >
           Forgot password?
         </a>
@@ -50,7 +50,7 @@ const LoginForm = () => {
       <Button
         btnType="submit"
         btnText="Login to your account"
-        btnStyle="w-full bg-blue-600 hover:bg-blue-800 outline-none border-none text-white"
+        btnStyle="w-full bg-green-600 hover:bg-green-800 outline-none border-none text-white"
       />
     </form>
   );

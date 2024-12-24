@@ -1,4 +1,3 @@
-import { FaLinkedin } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
@@ -39,10 +38,6 @@ const Login = () => {
             <FcGoogle className="text-xl" />
             Sign in with Google
           </button>
-          <button className="btn border shadow-none border-gray-300 dark:border-gray-800 bg-transparent dark:bg-gray-900 hover:bg-gray-100 hover:dark:bg-gray-800 lg:w-auto gap-2 flex-1 text-gray-800 dark:text-gray-400">
-            <FaLinkedin className="text-xl text-blue-900 dark:text-blue-500" />
-            Sign in with Linkedin
-          </button>
         </div>
 
         <div className="divider w-full max-w-md mx-auto text-gray-800 dark:text-gray-400">
@@ -56,7 +51,7 @@ const Login = () => {
           <Link
             state={location?.state}
             to="/auth/register"
-            className="text-blue-700 dark:text-blue-500 hover:underline"
+            className="text-green-700 dark:text-green-500 hover:underline"
           >
             Register
           </Link>
@@ -64,7 +59,7 @@ const Login = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex-1 flex flex-col justify-center items-center p-8">
+      <div className="flex-1 flex flex-col justify-center items-center p-8 bg-green-100 dark:bg-gray-900">
         <h2 className="text-4xl font-bold mb-4">
           Explore the world’s leading design portfolios.
         </h2>

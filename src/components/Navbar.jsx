@@ -171,7 +171,7 @@ const Navbar = () => {
               <>
                 <button
                   onClick={handleLogOut}
-                  className="btn btn-sm dark:bg-green-500 dark:text-white font-medium tooltip tooltip-bottom flex"
+                  className="btn btn-sm bg-green-300 dark:bg-green-500 dark:text-white font-medium tooltip tooltip-bottom flex border-none"
                   data-tip="Logout"
                 >
                   <span className="max-[425px]:hidden">Logout</span>{" "}
@@ -197,7 +197,7 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/auth/login"
-                className="btn btn-sm dark:bg-green-500 dark:text-white font-medium tooltip tooltip-bottom flex"
+                className="btn btn-sm bg-green-300 dark:bg-green-500 dark:text-white font-medium tooltip tooltip-bottom flex border-none"
                 data-tip="Login"
               >
                 <FiLogIn size={18} />{" "}

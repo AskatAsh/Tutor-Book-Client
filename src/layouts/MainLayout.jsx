@@ -9,7 +9,7 @@ const MainLayout = () => {
             <Navbar />
 
             {/* Main body */}
-            <main className="pt-16 md:pt-20 h-96">
+            <main>
                 <Outlet />
             </main>
 
