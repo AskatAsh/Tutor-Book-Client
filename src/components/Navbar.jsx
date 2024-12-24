@@ -6,22 +6,22 @@ import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import useTheme from "./../hooks/useTheme";
 import { IoSunny } from "react-icons/io5";
+import useAuthContext from "./../hooks/useAuthContext";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
-  //   const { user, setUser, signOutUser } = useContext(AuthContext);
-  const user = { email: "hello" };
+  const { user, setUser, signOutUser } = useAuthContext();
   const { theme, toggleTheme } = useTheme();
 
   const handleLogOut = () => {
-    //   signOutUser()
-    //     .then(() => {
-    //       toast.success("Succussfully Signed out!");
-    //       setUser(null);
-    //     })
-    //     .catch((error) => {
-    //       toast.error(error.code);
-    //     });
+    signOutUser()
+      .then(() => {
+        toast.success("Succussfully Signed out!");
+        setUser(null);
+      })
+      .catch((error) => {
+        toast.error(error.code);
+      });
   };
 
   useEffect(() => {
@@ -51,21 +51,21 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-transparent font-semibold text-green-500 dark:text-green-400 focus:bg-transparent focus:text-green-500"
+              : ""
+          }
+          to="/findTutors"
+        >
+          Find Tutors
+        </NavLink>
+      </li>
 
       {user && user?.email ? (
         <>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "bg-transparent font-semibold text-green-500 dark:text-green-400 focus:bg-transparent focus:text-green-500"
-                  : ""
-              }
-              to="/findTutors"
-            >
-              Find Tutors
-            </NavLink>
-          </li>
           <li>
             <NavLink
               className={({ isActive }) =>
