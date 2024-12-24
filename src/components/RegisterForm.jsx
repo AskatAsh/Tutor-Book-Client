@@ -39,9 +39,11 @@ const RegisterForm = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
+    const username = form.username.value;
+    const image = form.image.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    console.log(email, password, username, image);
     const isValid = checkPasswordValidity(password);
     if (!isValid) {
       return;
@@ -54,7 +56,8 @@ const RegisterForm = () => {
         setUser(newUser);
         form.reset();
         toast.success("Account created Successfully!");
-        navigate(location?.state || '/');
+        // navigate(location?.state || '/');
+        console.log(newUser);
       })
       .catch((error) => {
         toast.error(error.code);
@@ -64,7 +67,9 @@ const RegisterForm = () => {
   return (
     <form onSubmit={handleSignUp} className="w-full max-w-md">
       <div className="space-y-6">
-        <Input inputType="email" inputText="Email" />
+        <Input inputType="text" inputText="User Name" inputName="username" required />
+        <Input inputType="email" inputText="Email" inputName="email" />
+        <Input inputType="url" inputText="Image Link" inputName="image" />
 
         <div className="form-control relative">
           <label
@@ -127,7 +132,7 @@ const RegisterForm = () => {
       <Button
         btnType="submit"
         btnText="Create new account"
-        btnStyle="w-full bg-green-600 hover:bg-green-800 outline-none border-none text-white mt-6"
+        btnStyle="w-full bg-green-600 hover:bg-green-700 outline-none border-none text-white mt-6"
       />
     </form>
   );

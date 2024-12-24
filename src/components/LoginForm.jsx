@@ -36,24 +36,31 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleLogin} className="w-full max-w-md space-y-6">
-      <Input inputType="email" inputText="Email" />
-      {/* <Input inputType={showPass ? "text" : "password"} inputText="Password" /> */}
-      <label className="input bg-gray-50 dark:bg-gray-900 input-bordered mt-2 border border-gray-300 dark:border-gray-800 focus-within:border-green-700 focus-within:outline-none flex items-center gap-2 text-gray-800 dark:text-gray-50">
-        <input
-          type={showPass ? "text" : "password"}
-          name="password"
-          placeholder="Enter your Password"
-          className="grow"
-          id="password"
-          required
-        />
-        <button
-          onClick={handleShowPassword}
-          className="text-xl text-gray-800 dark:text-gray-400"
+      <Input inputType="email" inputText="Email" inputName="email" />
+      <div>
+        <label
+          className="block text-sm font-medium text-gray-800 dark:text-gray-300"
+          htmlFor="password"
         >
-          {showPass ? <FaEye /> : <FaEyeSlash />}
-        </button>
-      </label>
+          Password*
+        </label>
+        <label className="input bg-gray-50 dark:bg-gray-900 input-bordered mt-2 border border-gray-300 dark:border-gray-800 focus-within:border-green-700 focus-within:outline-none flex items-center gap-2 text-gray-800 dark:text-gray-50">
+          <input
+            type={showPass ? "text" : "password"}
+            name="password"
+            placeholder="Enter your Password"
+            className="grow"
+            id="password"
+            required
+          />
+          <button
+            onClick={handleShowPassword}
+            className="text-xl text-gray-800 dark:text-gray-400"
+          >
+            {showPass ? <FaEye /> : <FaEyeSlash />}
+          </button>
+        </label>
+      </div>
 
       <div className="flex justify-between items-center mt-4">
         <label className="flex items-center gap-2">
@@ -74,7 +81,7 @@ const LoginForm = () => {
       <Button
         btnType="submit"
         btnText="Login to your account"
-        btnStyle="w-full bg-green-600 hover:bg-green-800 outline-none border-none text-white"
+        btnStyle="w-full bg-green-600 hover:bg-green-700 outline-none border-none text-white"
       />
     </form>
   );

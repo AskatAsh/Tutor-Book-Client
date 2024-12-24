@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import auth from "../firebase/firebaseConfig"
 // import axios from "axios";
@@ -41,6 +42,11 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+
+  // update current user profile
+  const updateUser = (profile) => {
+    return updateProfile(auth.currentUser, profile);
+}
 
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (currentUser) => {
@@ -98,6 +104,7 @@ const AuthProvider = ({ children }) => {
     loginUser,
     googleSignIn,
     signOutUser,
+    updateUser,
   };
 
   return (

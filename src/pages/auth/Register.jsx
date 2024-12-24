@@ -27,7 +27,7 @@ const Register = () => {
       {/* Left Section */}
       <div className="flex-1 flex flex-col justify-center items-center p-8 bg-transperant dark:bg-gray-950 py-28">
         <h2 className="text-2xl font-semibold mb-6 dark:text-white text-gray-900">
-          Join us Now
+          Register Now!
         </h2>
 
         <div className="flex gap-4 mb-4 flex-col lg:flex-row max-w-md w-full">
