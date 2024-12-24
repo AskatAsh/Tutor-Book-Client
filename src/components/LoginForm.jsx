@@ -1,8 +1,8 @@
-import Input from "../common/Input";
-import Button from "../common/Button";
+import Button from "./Button";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import useAuthContext from './../hooks/useAuthContext';
+import Input from './Input';
 
 const LoginForm = () => {
   const { setUser, loginUser } = useAuthContext();

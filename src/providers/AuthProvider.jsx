@@ -9,7 +9,7 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import auth from "./firebaseConfig";
+import auth from "../firebase/firebaseConfig"
 // import axios from "axios";
 
 const googleProvider = new GoogleAuthProvider();
@@ -65,7 +65,8 @@ const AuthProvider = ({ children }) => {
       //     axios
       //       .post(
       //         `${import.meta.env.VITE_SERVER}/logout`,
-      //         {},
+      //         {},import auth from './../firebase/firebaseConfig';
+
       //         {
       //           headers: {
       //             "Content-Type": "application/json",
