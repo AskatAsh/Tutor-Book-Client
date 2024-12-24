@@ -182,9 +182,10 @@ const Navbar = () => {
                   <div
                     tabIndex={0}
                     role="button"
-                    className="btn btn-circle btn-sm dark:bg-green-500 dark:text-green-100 ml-2 p-0"
+                    className="btn btn-circle btn-sm dark:bg-green-500 dark:text-green-100 ml-2 p-0 overflow-hidden flex items-center justify-center"
                   >
-                    <FaRegUserCircle size={20} />
+                    
+                    {user?.photoURL ? <img src={user?.photoURL} alt={`image of ${user?.displayName}`} /> : <FaRegUserCircle size={20} />}
                   </div>
                   <ul
                     tabIndex={0}

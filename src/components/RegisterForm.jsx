@@ -7,7 +7,7 @@ import Input from './Input';
 import Button from './Button';
 
 const RegisterForm = () => {
-  const { createUser, setUser } = useAuthContext();
+  const { createUser, setUser, updateUser } = useAuthContext();
   const [showPass, setShowPass] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
   const navigate = useNavigate();
@@ -56,8 +56,21 @@ const RegisterForm = () => {
         setUser(newUser);
         form.reset();
         toast.success("Account created Successfully!");
-        // navigate(location?.state || '/');
         console.log(newUser);
+        // update user with name and image url
+        const profile = { displayName: username, photoURL: image };
+        updateUser(profile)
+        .then(() => {
+          setUser((prev) => ({
+            ...prev,
+            displayName: username || newUser.displayName,
+            photoURL: image || newUser.photoURL,
+          }));
+          navigate(location?.state || '/');
+          })
+          .catch((error) => {
+            toast.error(error.code);
+          });
       })
       .catch((error) => {
         toast.error(error.code);
