@@ -1,13 +1,16 @@
 import Button from "./Button";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import useAuthContext from './../hooks/useAuthContext';
-import Input from './Input';
+import useAuthContext from "./../hooks/useAuthContext";
+import Input from "./Input";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LoginForm = () => {
   const { setUser, loginUser } = useAuthContext();
   const navigate = useNavigate();
   const location = useLocation();
+  const [showPass, setShowPass] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -19,17 +22,38 @@ const LoginForm = () => {
         const user = result.user;
         setUser(user);
         toast.success("Login Successful.");
-        navigate(location?.state || '/');
+        navigate(location?.state || "/");
       })
       .catch((error) => {
         toast.error(error.code);
       });
   };
 
+  const handleShowPassword = (e) => {
+    e.preventDefault();
+    setShowPass(!showPass);
+  };
+
   return (
     <form onSubmit={handleLogin} className="w-full max-w-md space-y-6">
       <Input inputType="email" inputText="Email" />
-      <Input inputType="password" inputText="Password" />
+      {/* <Input inputType={showPass ? "text" : "password"} inputText="Password" /> */}
+      <label className="input bg-gray-50 dark:bg-gray-900 input-bordered mt-2 border border-gray-300 dark:border-gray-800 focus-within:border-green-700 focus-within:outline-none flex items-center gap-2 text-gray-800 dark:text-gray-50">
+        <input
+          type={showPass ? "text" : "password"}
+          name="password"
+          placeholder="Enter your Password"
+          className="grow"
+          id="password"
+          required
+        />
+        <button
+          onClick={handleShowPassword}
+          className="text-xl text-gray-800 dark:text-gray-400"
+        >
+          {showPass ? <FaEye /> : <FaEyeSlash />}
+        </button>
+      </label>
 
       <div className="flex justify-between items-center mt-4">
         <label className="flex items-center gap-2">
