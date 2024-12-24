@@ -4,14 +4,14 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { FaMoon, FaRegUserCircle } from "react-icons/fa";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
-import useTheme from './../hooks/useTheme';
+import useTheme from "./../hooks/useTheme";
 import { IoSunny } from "react-icons/io5";
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   //   const { user, setUser, signOutUser } = useContext(AuthContext);
-  const user = {email: "hello"};
-    const { theme, toggleTheme } = useTheme();
+  const user = { email: "hello" };
+  const { theme, toggleTheme } = useTheme();
 
   const handleLogOut = () => {
     //   signOutUser()
@@ -157,8 +157,8 @@ const Navbar = () => {
           <div className="navbar-end">
             <button
               className="btn btn-xs btn-ghost btn-circle tooltip tooltip-left mr-2"
-                data-tip={theme === "light" ? "dark" : "light"}
-                onClick={toggleTheme}
+              data-tip={theme === "light" ? "dark" : "light"}
+              onClick={toggleTheme}
             >
               {theme === "light" ? (
                 <FaMoon size={20} className="text-gray-800" />
@@ -174,11 +174,16 @@ const Navbar = () => {
                   className="btn btn-sm dark:bg-green-500 dark:text-white font-medium tooltip tooltip-bottom flex"
                   data-tip="Logout"
                 >
-                  <span className="max-[425px]:hidden">Logout</span> <FiLogOut size={18} />
+                  <span className="max-[425px]:hidden">Logout</span>{" "}
+                  <FiLogOut size={18} />
                 </button>
                 {/* user profile */}
                 <div className="dropdown">
-                  <div tabIndex={0} role="button" className="btn btn-circle btn-sm dark:bg-green-500 dark:text-green-100 ml-2 p-0">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-circle btn-sm dark:bg-green-500 dark:text-green-100 ml-2 p-0"
+                  >
                     <FaRegUserCircle size={20} />
                   </div>
                   <ul
@@ -195,7 +200,8 @@ const Navbar = () => {
                 className="btn btn-sm dark:bg-green-500 dark:text-white font-medium tooltip tooltip-bottom flex"
                 data-tip="Login"
               >
-                <FiLogIn size={18} /> <span className="max-[425px]:hidden">Login</span>
+                <FiLogIn size={18} />{" "}
+                <span className="max-[425px]:hidden">Login</span>
               </Link>
             )}
           </div>
