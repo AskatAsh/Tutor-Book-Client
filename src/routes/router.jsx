@@ -8,6 +8,8 @@ import FindTutors from './../pages/FindTutors';
 import MyBookedTutor from './../pages/MyBookedTutor';
 import TutorDetails from './../pages/TutorDetails';
 import Error from './../pages/Error';
+import Login from './../pages/auth/Login';
+import Register from './../pages/auth/Register';
 
 const router = createBrowserRouter([
     {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
             {
                 path: '/tutorDetails',
                 element: <TutorDetails />
+            },
+            {
+                path: '/auth/login',
+                element: <Login />
+            },
+            {
+                path: '/auth/register',
+                element: <Register />
             }
         ]
     },
