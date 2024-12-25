@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
 const TutorCard = ({ tutorial }) => {
-  const { name, image, language, description, price, review } = tutorial;
+  const { _id, name, image, language, description, price, review } = tutorial;
   return (
     <div className="col-span-6 p-4 md:p-6 bg-white dark:bg-gray-800 dark:bg-opacity-30 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300">
       {/* Left Section */}
@@ -15,11 +15,11 @@ const TutorCard = ({ tutorial }) => {
           <img src={image} alt="Tutorial Image" className="object-cover" />
         </div>
 
-        {/* Job Info */}
+        {/* Tutor Info */}
         <div>
-          {/* Job title */}
+          {/* Tutor Name */}
           <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-2">
-            <Link to={`/jobDetails`} className="hover:text-blue-500">
+            <Link to={`/tutor/${_id}`} className="hover:text-blue-500">
               {name}
             </Link>
           </h3>
@@ -41,7 +41,7 @@ const TutorCard = ({ tutorial }) => {
           >
             {description.substring(0, 100)}...{" "}
             <Link
-              to={`/jobDetails/`}
+              to={`/tutor/${_id}`}
               className="text-blue-500 dark:text-blue-400 hover:underline"
             >
               More Details

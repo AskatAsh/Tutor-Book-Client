@@ -46,7 +46,7 @@ const router = createBrowserRouter([
                 element: <MyBookedTutor />
             },
             {
-                path: '/tutorDetails',
+                path: '/tutor/:details',
                 element: <TutorDetails />
             },
             {
