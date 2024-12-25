@@ -1,5 +1,4 @@
-import { LiaFlagUsaSolid } from "react-icons/lia";
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowForwardIos, MdOutlineCategory } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
 const Categories = () => {
@@ -11,10 +10,10 @@ const Categories = () => {
       <div className="max-w-7xl w-11/12 mx-auto rounded-lg grid grid-cols-12 gap-5 my-10">
         {/* tutors count */}
         <Link className="bg-white dark:bg-gray-800 p-4 rounded-lg col-span-4 border flex items-center justify-between dark:border-gray-700 hover:bg-green-100 dark:hover:bg-gray-700">
-          <div className="flex items-center gap-3">
-            <LiaFlagUsaSolid size={40} />
+          <div className="flex items-center gap-4">
+            <MdOutlineCategory size={28} />
             <div>
-              <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
+              <strong className="text-xl font-semibold text-gray-700 dark:text-gray-300 inline-block">
                 English Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -26,10 +25,10 @@ const Categories = () => {
         </Link>
         {/* tutors count */}
         <Link className="bg-white dark:bg-gray-800 p-4 rounded-lg col-span-4 border flex items-center justify-between dark:border-gray-700 hover:bg-green-100 dark:hover:bg-gray-700">
-          <div className="flex items-center gap-3">
-            <LiaFlagUsaSolid size={40} />
+          <div className="flex items-center gap-4">
+            <MdOutlineCategory size={28} />
             <div>
-              <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
+              <strong className="text-xl font-semibold text-gray-700 dark:text-gray-300 inline-block">
                 Spanish Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -41,10 +40,10 @@ const Categories = () => {
         </Link>
         {/* tutors count */}
         <Link className="bg-white dark:bg-gray-800 p-4 rounded-lg col-span-4 border flex items-center justify-between dark:border-gray-700 hover:bg-green-100 dark:hover:bg-gray-700">
-          <div className="flex items-center gap-3">
-            <LiaFlagUsaSolid size={40} />
+          <div className="flex items-center gap-4">
+            <MdOutlineCategory size={28} />
             <div>
-              <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
+              <strong className="text-xl font-semibold text-gray-700 dark:text-gray-300 inline-block">
                 French Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -56,10 +55,10 @@ const Categories = () => {
         </Link>
         {/* tutors count */}
         <Link className="bg-white dark:bg-gray-800 p-4 rounded-lg col-span-4 border flex items-center justify-between dark:border-gray-700 hover:bg-green-100 dark:hover:bg-gray-700">
-          <div className="flex items-center gap-3">
-            <LiaFlagUsaSolid size={40} />
+          <div className="flex items-center gap-4">
+            <MdOutlineCategory size={28} />
             <div>
-              <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
+              <strong className="text-xl font-semibold text-gray-700 dark:text-gray-300 inline-block">
                 German Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
@@ -71,10 +70,10 @@ const Categories = () => {
         </Link>
         {/* tutors count */}
         <Link className="bg-white dark:bg-gray-800 p-4 rounded-lg col-span-4 border flex items-center justify-between dark:border-gray-700 hover:bg-green-100 dark:hover:bg-gray-700">
-          <div className="flex items-center gap-3">
-            <LiaFlagUsaSolid size={40} />
+          <div className="flex items-center gap-4">
+            <MdOutlineCategory size={28} />
             <div>
-              <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
+              <strong className="text-xl font-semibold text-gray-700 dark:text-gray-300 inline-block">
                 Italian Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">

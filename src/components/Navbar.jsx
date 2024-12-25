@@ -111,7 +111,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed w-full transition-all duration-300 z-50 ${
+      className={`fixed top-0 w-full transition-all duration-300 z-50 ${
         isSticky
           ? "fixed bg-white text-gray-800 dark:text-gray-100 dark:bg-gray-950 shadow-md border-0 dark:border-b dark:border-b-gray-800"
           : "bg-transperant dark:border-b dark:border-b-transparent text-gray-800 dark:text-gray-50"
