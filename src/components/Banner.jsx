@@ -25,7 +25,7 @@ const Banner = () => {
       >
         <SwiperSlide className="relative">
           <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex items-center justify-center">
-            <h2 className="text-6xl text-gray-900 dark:text-white font-extrabold">
+            <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
               Welcome to Tutor Book
             </h2>
           </div>
@@ -37,7 +37,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide className="relative">
           <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex items-center justify-center">
-            <h2 className="text-6xl text-gray-900 dark:text-white font-extrabold">
+            <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
               Welcome to Tutor Book
             </h2>
           </div>
@@ -49,7 +49,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide className="relative">
           <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex items-center justify-center">
-            <h2 className="text-6xl text-gray-900 dark:text-white font-extrabold">
+            <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
               Welcome to Tutor Book
             </h2>
           </div>
