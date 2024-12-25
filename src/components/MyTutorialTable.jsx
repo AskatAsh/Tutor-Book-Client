@@ -7,7 +7,7 @@ import { PropTypes } from "prop-types";
 const MyTutorialTable = ({ myTutorialsData = [] }) => {
   return (
     <div>
-      <section className="max-w-7xl mx-auto w-11/12 p-4 md:p-6 lg:p-8 my-16 md:my-20 bg-white dark:bg-gray-950 dark:bg-opacity-30 border dark:border-gray-800 rounded-xl shadow-md overflow-hidden">
+      <section className="max-w-7xl mx-auto w-11/12 p-4 md:p-6 lg:p-8 my-16 bg-white dark:bg-gray-950 dark:bg-opacity-30 border dark:border-gray-800 rounded-xl shadow-md overflow-hidden">
         {/* Posted jobs table */}
         <div className="overflow-x-auto">
           <table className="table">
