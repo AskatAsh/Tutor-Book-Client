@@ -1,4 +1,5 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Banner from "../components/Banner";
 
 const Home = () => {
   return (
@@ -8,7 +9,8 @@ const Home = () => {
           <title>Home</title>
         </Helmet>
       </HelmetProvider>
-      Home page
+      {/* Image slider banner */}
+      <Banner />
     </div>
   );
 };
