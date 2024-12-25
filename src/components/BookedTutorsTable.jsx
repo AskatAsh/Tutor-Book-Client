@@ -2,11 +2,13 @@ import { FaRegStar } from "react-icons/fa";
 import { GiMoneyStack } from "react-icons/gi";
 import { LuLanguages } from "react-icons/lu";
 import { PropTypes } from "prop-types";
+import toast from "react-hot-toast";
 
 const BookedTutorsTable = ({ myBookedTutors = [] }) => {
 
   const handleAddReview = (id) => {
     console.log(id);
+    toast.success("Review Added Successfully!");
   };
 
   return (
