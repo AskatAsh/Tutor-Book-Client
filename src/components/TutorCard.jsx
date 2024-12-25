@@ -19,7 +19,7 @@ const TutorCard = ({ tutorial }) => {
         <div>
           {/* Tutor Name */}
           <h3 className="text-lg font-semibold text-gray-700 dark:text-white mb-2">
-            <Link to={`/tutor/${_id}`} className="hover:text-blue-500">
+            <Link to={`/tutor/${_id}`} className="hover:text-green-500">
               {name}
             </Link>
           </h3>
@@ -42,7 +42,7 @@ const TutorCard = ({ tutorial }) => {
             {description.substring(0, 100)}...{" "}
             <Link
               to={`/tutor/${_id}`}
-              className="text-blue-500 dark:text-blue-400 hover:underline"
+              className="text-green-500 dark:text-green-400 hover:underline"
             >
               More Details
             </Link>
