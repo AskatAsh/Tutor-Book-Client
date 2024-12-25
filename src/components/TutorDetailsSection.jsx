@@ -19,6 +19,7 @@ const TutorDetailsSection = ({ tutorDetails }) => {
       image: image,
       language: language,
       price: price,
+      tutorName: name,
       tutorEmail: email,
       email: user?.email,
     };

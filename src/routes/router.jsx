@@ -5,12 +5,12 @@ import AddTutorials from './../pages/AddTutorials';
 import MyTutorials from './../pages/MyTutorials';
 import UpdateTutorial from './../pages/UpdateTutorial';
 import FindTutors from './../pages/FindTutors';
-import MyBookedTutor from './../pages/MyBookedTutor';
 import TutorDetails from './../pages/TutorDetails';
 import Error from './../pages/Error';
 import Login from './../pages/auth/Login';
 import Register from './../pages/auth/Register';
 import FindCategoryTutors from "../pages/FindCategoryTutors";
+import MyBookedTutors from './../pages/MyBookedTutors';
 
 const router = createBrowserRouter([
     {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myBookedTutor',
-                element: <MyBookedTutor />
+                element: <MyBookedTutors />
             },
             {
                 path: '/tutor/:details',

@@ -19,9 +19,7 @@ const MyTutorials = () => {
       </HelmetProvider>
 
       <section className="py-16 md:pt-20">
-      <h1 className="text-4xl font-bold text-center mt-10">
-          My Tutorials
-        </h1>
+        <h1 className="text-4xl font-bold text-center mt-10">My Tutorials</h1>
         {isLoading ? (
           <Loading />
         ) : errorMessage.message ? (
