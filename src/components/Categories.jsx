@@ -24,7 +24,7 @@ const Categories = () => {
       ) : (
         <div className="max-w-7xl w-11/12 mx-auto rounded-lg grid grid-cols-12 gap-5 my-10">
           {categories.map((category, idx) => (
-            <Link
+            <Link to={`/findTutors/${category}`}
               key={idx}
               className="bg-white dark:bg-gray-800 p-4 rounded-lg col-span-4 border flex items-center justify-between dark:border-gray-700 hover:bg-green-100 dark:hover:bg-gray-700"
             >
