@@ -3,12 +3,39 @@ import { GiMoneyStack } from "react-icons/gi";
 import { LuLanguages } from "react-icons/lu";
 import { PropTypes } from "prop-types";
 import toast from "react-hot-toast";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const BookedTutorsTable = ({ myBookedTutors = [] }) => {
-
-  const handleAddReview = (id) => {
+  const handleAddReview = async (id) => {
     console.log(id);
-    toast.success("Review Added Successfully!");
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_SERVER}/addReview`,
+        { id },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200 || response.status === 201) {
+        // succes message
+        toast.success(`${response.data.review} Review Added Successfully!`);
+      }
+    } catch (error) {
+      // console.log("Error: ", error);
+      // failure message
+      Swal.fire({
+        icon: "error",
+        title: "Review Adding Failed",
+        text:
+          error.response?.data?.message ||
+          "An error occurred. Please try again later.",
+      });
+    }
   };
 
   return (
