@@ -7,10 +7,8 @@ import ErrorMessages from "../components/ErrorMessages";
 
 const TutorDetails = () => {
   const { details } = useParams();
-  console.log(details);
   const [tutorDetails, isLoading, errorMessage, getTutorDetails] =
     useGetTutorDetails(details);
-  console.log(tutorDetails);
 
   return (
     <div>

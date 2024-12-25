@@ -1,13 +1,58 @@
 import { FaRegStar } from "react-icons/fa";
 import { GiMoneyStack } from "react-icons/gi";
 import { LuLanguages } from "react-icons/lu";
-import { Link } from "react-router-dom";
 import Button from "./Button";
 import { IoBookmarksOutline } from "react-icons/io5";
 import { PropTypes } from "prop-types";
+import Swal from "sweetalert2";
+import useAuthContext from "./../hooks/useAuthContext";
+import axios from "axios";
 
 const TutorDetailsSection = ({ tutorDetails }) => {
-  const { name, image, language, description, price, review } = tutorDetails;
+  const { user } = useAuthContext();
+  const { _id, name, email, image, language, description, price, review } =
+    tutorDetails;
+
+  const handleBookTutor = async (id) => {
+    const bookedData = {
+      tutorId: id,
+      image: image,
+      language: language,
+      price: price,
+      tutorEmail: email,
+      email: user?.email,
+    };
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_SERVER}/bookTutor`,
+        bookedData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200 || response.status === 201) {
+        // succes message
+        Swal.fire({
+          icon: "success",
+          title: "Tutor Booked",
+          text: "Tutor has been successfully Booked!",
+        });
+      }
+    } catch (error) {
+      // console.log("Error: ", error);
+      // failure message
+      Swal.fire({
+        icon: "error",
+        title: "Booking Failed",
+        text:
+          error.response?.data?.message ||
+          "An error occurred. Please try again later.",
+      });
+    }
+  };
 
   return (
     <>
@@ -47,12 +92,12 @@ const TutorDetailsSection = ({ tutorDetails }) => {
           </div>
           {/* right section */}
           <div className="flex items-center justify-end gap-3">
-            <Link to={`/jobApply`}>
+            <div onClick={() => handleBookTutor(_id)}>
               <Button
                 btnText="Book Now"
                 btnStyle="btn-md bg-green-500 hover:bg-green-600 outline-none border-none text-white bg-opacity-90"
               />
-            </Link>
+            </div>
 
             <Button
               btnText={<IoBookmarksOutline size={20} />}
