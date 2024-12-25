@@ -1,17 +1,19 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
-const useGetTutorialsData = () => {
-  const [tutorialsData, setTutorialsData] = useState([]);
+const useGetCategories = () => {
+  const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState({});
 
-  const getTutorialsData = useCallback(async () => {
+  const getCategories = useCallback(async () => {
     try {
       setIsLoading(true);
-      // get Tutorials
-      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/findTutorials`);
-      setTutorialsData(data);
+      // get categories
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_SERVER}/findCategories`
+      );
+      setCategories(data);
     } catch (error) {
       // handle errors
       // console.log(error);
@@ -21,7 +23,7 @@ const useGetTutorialsData = () => {
         message:
           error.response?.data?.message ||
           (error.request
-            ? "Bad Request: Failed to fetch Tutorials Data."
+            ? "Bad Request: Failed to fetch Categories Data."
             : "An unexpected error occurred. Please try again."),
         code: error.code || "N/A",
       };
@@ -32,10 +34,10 @@ const useGetTutorialsData = () => {
   }, []);
 
   useEffect(() => {
-    getTutorialsData();
-  }, [getTutorialsData]);
+    getCategories();
+  }, [getCategories]);
 
-  return [tutorialsData, isLoading, errorMessage, getTutorialsData];
+  return [categories, isLoading, errorMessage, getCategories];
 };
 
-export default useGetTutorialsData;
+export default useGetCategories;
