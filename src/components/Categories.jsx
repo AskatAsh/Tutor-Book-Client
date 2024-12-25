@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Categories = () => {
   return (
     <section className="my-20">
-      <h2 className="text-3xl font-bold text-gray-800 dark:text-green-400 text-center px-6">
+      <h2 className="text-3xl font-bold text-green-500 dark:text-green-400 text-center px-6">
         Explore Categories
       </h2>
       <div className="max-w-7xl w-11/12 mx-auto rounded-lg grid grid-cols-12 gap-5 my-10">
@@ -15,10 +15,10 @@ const Categories = () => {
             <LiaFlagUsaSolid size={40} />
             <div>
               <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
-                32,000+
+                English Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                Experienced Tutors
+                20,000+ Teachers
               </p>
             </div>
           </div>
@@ -30,10 +30,10 @@ const Categories = () => {
             <LiaFlagUsaSolid size={40} />
             <div>
               <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
-                300,000+
+                Spanish Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                5-star Tutor Reviews
+                20,000+ Teachers
               </p>
             </div>
           </div>
@@ -45,10 +45,10 @@ const Categories = () => {
             <LiaFlagUsaSolid size={40} />
             <div>
               <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
-                120+
+                French Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                Subjects Taught
+                20,000+ Teachers
               </p>
             </div>
           </div>
@@ -60,10 +60,10 @@ const Categories = () => {
             <LiaFlagUsaSolid size={40} />
             <div>
               <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
-                180+
+                German Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                Tutor Nationalities
+                20,000+ Teachers
               </p>
             </div>
           </div>
@@ -75,10 +75,10 @@ const Categories = () => {
             <LiaFlagUsaSolid size={40} />
             <div>
               <strong className="text-2xl font-bold text-gray-700 dark:text-gray-300 inline-block">
-                4.8+
+                Italian Tutors
               </strong>
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                On App Store
+                20,000+ Teachers
               </p>
             </div>
           </div>

@@ -17,10 +17,10 @@ const Banner = () => {
       <Swiper
         pagination={pagination}
         modules={[Pagination, Autoplay]}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         className="mySwiper"
       >
         <SwiperSlide className="relative">
@@ -28,7 +28,10 @@ const Banner = () => {
             <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
               Personalized Learning, Anytime, Anywhere.
             </h2>
-            <p className="text-gray-600 bg-white bg-opacity-70 px-6 py-1 mx-2 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">TutorBook connects you with expert tutors for tailored learning on your schedule, wherever you are.</p>
+            <p className="text-gray-600 bg-white bg-opacity-70 px-6 py-1 mx-2 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
+              TutorBook connects you with expert tutors for tailored learning on
+              your schedule, wherever you are.
+            </p>
           </div>
           <img
             className="w-full min-h-96 h-full object-cover aspect-[2/1]"
@@ -37,10 +40,14 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex items-center justify-center">
+          <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex flex-col gap-8 items-center justify-center">
             <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
-            Your Gateway to Academic Success.
+              Your Gateway to Academic Success.
             </h2>
+            <p className="text-gray-600 bg-white bg-opacity-70 px-6 py-1 mx-2 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
+              Achieve your goals with TutorBook. Find top tutors, book sessions
+              easily, and excel in any subject.
+            </p>
           </div>
           <img
             className="w-full min-h-96 h-full object-cover aspect-[2/1]"
@@ -49,10 +56,14 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex items-center justify-center">
+          <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex flex-col gap-8 items-center justify-center">
             <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
               Personalized Learning, Anytime, Anywhere.
             </h2>
+            <p className="text-gray-600 bg-white bg-opacity-70 px-6 py-1 mx-2 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
+              TutorBook matches you with the perfect tutor to help you master
+              subjects and achieve your dreams.
+            </p>
           </div>
           <img
             className="w-full min-h-96 h-full object-cover aspect-[2/1]"
