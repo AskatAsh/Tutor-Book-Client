@@ -24,8 +24,8 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide className="relative">
-          <div className="w-full h-full bg-black absolute bg-opacity-30 flex items-center justify-center">
-            <h2 className="text-6xl text-white font-extrabold">
+          <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex items-center justify-center">
+            <h2 className="text-6xl text-gray-900 dark:text-white font-extrabold">
               Welcome to Tutor Book
             </h2>
           </div>
@@ -36,8 +36,8 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <div className="w-full h-full bg-black absolute bg-opacity-30 flex items-center justify-center">
-            <h2 className="text-6xl text-white font-extrabold">
+          <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex items-center justify-center">
+            <h2 className="text-6xl text-gray-900 dark:text-white font-extrabold">
               Welcome to Tutor Book
             </h2>
           </div>
@@ -48,8 +48,8 @@ const Banner = () => {
           />
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <div className="w-full h-full bg-black absolute bg-opacity-30 flex items-center justify-center">
-            <h2 className="text-6xl text-white font-extrabold">
+          <div className="w-full h-full bg-gradient-to-b from-[#ffffff70] to-transparent dark:bg-gradient-to-b dark:from-[#00000070] dark:to-transparent absolute flex items-center justify-center">
+            <h2 className="text-6xl text-gray-900 dark:text-white font-extrabold">
               Welcome to Tutor Book
             </h2>
           </div>
