@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Stats from "../components/Stats";
 import Categories from "../components/Categories";
 import TestimonialsSection from "../components/TestimonialsSection";
+import FeaturedTutors from "../components/FeaturedTutors";
 
 const Home = () => {
   return (
@@ -20,6 +21,8 @@ const Home = () => {
       <Categories />
       {/* Students Testimonials */}
       <TestimonialsSection />
+      {/* Featured Tutors Section */}
+      <FeaturedTutors />
     </div>
   );
 };
