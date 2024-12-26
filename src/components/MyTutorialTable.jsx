@@ -5,10 +5,55 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const MyTutorialTable = ({ myTutorialsData = [] }) => {
   const [myTutorials, setMyTutorials] = useState(myTutorialsData);
-  console.log(myTutorials);
+
+  const handleDeleteTutorial = (id) => {
+    console.log(id);
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const response = await axios.delete(
+            `${import.meta.env.VITE_SERVER}/deleteTutorial/${id}`
+          );
+
+          if (response.status === 200 || response.status === 201) {
+            // succes message
+            Swal.fire({
+              icon: "success",
+              title: "Delete Tutorial",
+              text: "Tutorial Deleted Successfully!",
+            });
+            // update state after deleting
+            const newTutorials = myTutorials.filter(tutorial => tutorial._id !== id);
+            setMyTutorials(newTutorials);
+          }
+        } catch (error) {
+          // console.log("Error: ", error);
+          // failure message
+          Swal.fire({
+            icon: "error",
+            title: "Deleting Tutorial Failed",
+            text:
+              error.response?.data?.message ||
+              "An error occurred. Please try again later.",
+          });
+        }
+      }
+    });
+  };
 
   return (
     <>
@@ -27,7 +72,7 @@ const MyTutorialTable = ({ myTutorialsData = [] }) => {
             </thead>
             <tbody className="text-base text-gray-500 dark:text-gray-400">
               {/* mapping applied jobs in rows */}
-              {myTutorialsData.map((tutorial, idx) => (
+              {myTutorials.map((tutorial, idx) => (
                 <tr
                   key={tutorial?._id}
                   className="hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:bg-opacity-30"
@@ -64,15 +109,19 @@ const MyTutorialTable = ({ myTutorialsData = [] }) => {
                   <td className="py-6">
                     <div className="flex items-start gap-2">
                       {/* edit job post */}
-                      <Link to={`/updateTutorial/${tutorial?._id}`} state={tutorial}>
-                      <button
-                        className="w-8 h-8 bg-green-50 dark:bg-gray-800 rounded-md flex items-center justify-center text-green-500 hover:bg-green-400 dark:hover:bg-green-800 hover:text-white tooltip tooltip-top"
-                        data-tip="Update"
+                      <Link
+                        to={`/updateTutorial/${tutorial?._id}`}
+                        state={tutorial}
                       >
-                        <FaRegEdit />
-                      </button>
+                        <button
+                          className="w-8 h-8 bg-green-50 dark:bg-gray-800 rounded-md flex items-center justify-center text-green-500 hover:bg-green-400 dark:hover:bg-green-800 hover:text-white tooltip tooltip-top"
+                          data-tip="Update"
+                        >
+                          <FaRegEdit />
+                        </button>
                       </Link>
                       <button
+                        onClick={() => handleDeleteTutorial(tutorial?._id)}
                         className="w-8 h-8 bg-red-50 dark:bg-gray-800 rounded-md flex items-center justify-center text-red-500 hover:bg-red-400 dark:hover:bg-red-800 hover:text-white tooltip tooltip-top"
                         data-tip="Delete"
                       >
