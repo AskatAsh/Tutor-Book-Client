@@ -21,7 +21,7 @@ const FindCategoryTutors = () => {
       {/* Tutorials from database */}
       <section className="max-w-7xl w-11/12 mx-auto py-16 md:py-20">
         <h1 className="text-4xl font-bold text-center my-10">
-          {category} Tutors
+        {category.charAt(0).toUpperCase() + category.slice(1)} Tutors
         </h1>
         {/* show tutorial data in grid */}
         {isLoading ? (
@@ -32,11 +32,17 @@ const FindCategoryTutors = () => {
             onRetry={() => getTutorialsData()}
           />
         ) : (
-          <div className="grid grid-cols-12 gap-5">
-            {tutorialsData.map((tutorial) => (
-              <TutorCard key={tutorial._id} tutorial={tutorial} />
-            ))}
-          </div>
+          <>
+            {tutorialsData.length > 0 ? (
+              <div className="grid grid-cols-12 gap-5">
+                {tutorialsData.map((tutorial) => (
+                  <TutorCard key={tutorial._id} tutorial={tutorial} />
+                ))}
+              </div>
+            ) : (
+              <h2 className="text-center text-3xl font-bold text-gray-500 dark:text-gray-300 px-4 md:px-6">Sorry! No data found for this Language.</h2>
+            )}
+          </>
         )}
       </section>
     </div>
