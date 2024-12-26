@@ -14,7 +14,7 @@ const Login = () => {
   // google sign in
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then(async (result) => {
+      .then((result) => {
         const newUser = result.user;
         setUser(newUser);
         toast.success("Signed in Successfully.");

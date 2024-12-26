@@ -1,18 +1,21 @@
-import axios from "axios";
+// import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useGetBookedTutors = (email) => {
   const [myBookedTutors, setMyBookedTutors] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState({});
+  const axiosInstance = useAxiosSecure();
 
   const getMyBookedTutors = useCallback(async () => {
     try {
       setIsLoading(true);
       // get My Booked Tutors
-      const { data } = await axios.get(
-        `${import.meta.env.VITE_SERVER}/myBookedTutors?email=${email}`
+      const { data } = await axiosInstance.get(
+        `/myBookedTutors?email=${email}`
       );
+
       setMyBookedTutors(data);
     } catch (error) {
       // handle errors

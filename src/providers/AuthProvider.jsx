@@ -10,8 +10,8 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import auth from "../firebase/firebaseConfig"
-// import axios from "axios";
+import auth from "../firebase/firebaseConfig";
+import axios from "axios";
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -46,48 +46,44 @@ const AuthProvider = ({ children }) => {
   // update current user profile
   const updateUser = (profile) => {
     return updateProfile(auth.currentUser, profile);
-}
+  };
 
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (currentUser) => {
       // console.log(currentUser);
-      //   if (currentUser?.email) {
-      //     setUser(currentUser);
-      //     // set jwt in cookie after login or signup
-      //     const userInfo = { email: currentUser.email };
-      //     axios
-      //       .post(`${import.meta.env.VITE_SERVER}/jwt`, userInfo, {
-      //         headers: {
-      //           "Content-Type": "application/json",
-      //         },
-      //         withCredentials: true,
-      //       })
-      //       .then(() => {
-      //         // console.log("logged in user: ", res.data);
-      //         setLoading(false);
-      //       });
-      //   } else {
-      //     // clear cookie after logout
-      //     axios
-      //       .post(
-      //         `${import.meta.env.VITE_SERVER}/logout`,
-      //         {},import auth from './../firebase/firebaseConfig';
-
-      //         {
-      //           headers: {
-      //             "Content-Type": "application/json",
-      //           },
-      //           withCredentials: true,
-      //         }
-      //       )
-      //       .then(() => {
-      //         // console.log("Logout user: ", res.data);
-      //         setLoading(false);
-      //       });
-      //   }
-
-      setUser(currentUser);
-      setLoading(false);
+      if (currentUser?.email) {
+        setUser(currentUser);
+        // set jwt in cookie after login or signup
+        const userInfo = { email: currentUser.email };
+        axios
+          .post(`${import.meta.env.VITE_SERVER}/jwt`, userInfo, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          })
+          .then(() => {
+            // console.log("logged in user: ", res.data);
+            setLoading(false);
+          });
+      } else {
+        // clear cookie after logout
+        axios
+          .post(
+            `${import.meta.env.VITE_SERVER}/logout`,
+            {},
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+              withCredentials: true,
+            }
+          )
+          .then(() => {
+            // console.log("Logout user: ", res.data);
+            setLoading(false);
+          });
+      }
     });
 
     return () => {
