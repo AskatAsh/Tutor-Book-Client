@@ -6,12 +6,12 @@ import MyTutorials from './../pages/MyTutorials';
 import UpdateTutorial from './../pages/UpdateTutorial';
 import FindTutors from './../pages/FindTutors';
 import TutorDetails from './../pages/TutorDetails';
-import Error from './../pages/Error';
 import Login from './../pages/auth/Login';
 import Register from './../pages/auth/Register';
 import FindCategoryTutors from "../pages/FindCategoryTutors";
 import MyBookedTutors from './../pages/MyBookedTutors';
 import PrivateRoutes from "./PrivateRoutes";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <Error />
+        element: <ErrorPage />
     }
 ])
 
