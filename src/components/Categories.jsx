@@ -28,7 +28,7 @@ const Categories = () => {
             className="bg-white dark:bg-gray-800 p-4 rounded-lg col-span-4 border flex items-center justify-between dark:border-gray-700 hover:bg-green-100 dark:hover:bg-gray-700"
           >
             <div className="flex items-center gap-4">
-              <img className="w-10" src={category.icon} alt={`icon of ${category.language} category`} />
+              <img className="w-10 bg-gray-100 dark:bg-gray-400 p-1 rounded-md" src={category.icon} alt={`icon of ${category.language} category`} />
               <div>
                 <strong className="text-xl font-semibold text-gray-700 dark:text-gray-300 inline-block">
                 {category.language.charAt(0).toUpperCase() + category.language.slice(1)} Tutors
