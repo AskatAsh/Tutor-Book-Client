@@ -1,4 +1,5 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import UpdateTutorialForm from "../components/UpdateTutorialForm";
 
 const UpdateTutorial = () => {
   return (
@@ -8,7 +9,9 @@ const UpdateTutorial = () => {
           <title>Update Tutorial</title>
         </Helmet>
       </HelmetProvider>
-      Update Tutorial
+      
+      {/* update tutorial form */}
+      <UpdateTutorialForm />
     </div>
   );
 };

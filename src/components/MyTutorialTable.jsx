@@ -3,8 +3,13 @@ import { GiMoneyStack } from "react-icons/gi";
 import { LuLanguages } from "react-icons/lu";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { PropTypes } from "prop-types";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const MyTutorialTable = ({ myTutorialsData = [] }) => {
+  const [myTutorials, setMyTutorials] = useState(myTutorialsData);
+  console.log(myTutorials);
+
   return (
     <>
       <section className="max-w-7xl mx-auto w-11/12 p-4 md:p-6 lg:p-8 my-16 bg-white dark:bg-gray-950 dark:bg-opacity-30 border dark:border-gray-800 rounded-xl shadow-md overflow-hidden">
@@ -59,12 +64,14 @@ const MyTutorialTable = ({ myTutorialsData = [] }) => {
                   <td className="py-6">
                     <div className="flex items-start gap-2">
                       {/* edit job post */}
+                      <Link to={`/updateTutorial/${tutorial?._id}`} state={tutorial}>
                       <button
                         className="w-8 h-8 bg-green-50 dark:bg-gray-800 rounded-md flex items-center justify-center text-green-500 hover:bg-green-400 dark:hover:bg-green-800 hover:text-white tooltip tooltip-top"
                         data-tip="Update"
                       >
                         <FaRegEdit />
                       </button>
+                      </Link>
                       <button
                         className="w-8 h-8 bg-red-50 dark:bg-gray-800 rounded-md flex items-center justify-center text-red-500 hover:bg-red-400 dark:hover:bg-red-800 hover:text-white tooltip tooltip-top"
                         data-tip="Delete"
