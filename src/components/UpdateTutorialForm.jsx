@@ -6,19 +6,19 @@ import Swal from "sweetalert2";
 const UpdateTutorialForm = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
-  
+
   const handleUpdateTutorial = async (e) => {
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
-    const thumbnail = form.thumbnail.value;
+    const tutorImage = form.tutorImage.value;
     const image = form.image.value;
     const language = form.language.value;
     const price = parseInt(form.price.value);
     const description = form.description.value;
     const updatedData = {
       title,
-      thumbnail,
+      tutorImage,
       image,
       language,
       price,
@@ -98,7 +98,7 @@ const UpdateTutorialForm = () => {
               disabled
             />
           </label>
-          {/* Name */}
+          {/* Tutorial title */}
           <label className="form-control w-full col-span-12 sm:col-span-6">
             <div className="label">
               <span className="label-text">Tutorial Title*</span>
@@ -106,7 +106,7 @@ const UpdateTutorialForm = () => {
             <input
               name="title"
               type="text"
-              defaultValue={state?.name}
+              defaultValue={state?.title}
               placeholder="Enter Tutorial Title"
               className="input input-bordered w-full"
               required
@@ -115,13 +115,13 @@ const UpdateTutorialForm = () => {
           {/* Thumbnail URL */}
           <label className="form-control w-full col-span-12 sm:col-span-6">
             <div className="label">
-              <span className="label-text">Thumbnail URL*</span>
+              <span className="label-text">Tutor Image*</span>
             </div>
             <input
-              name="thumbnail"
+              name="tutorImage"
               type="url"
-              defaultValue={state?.thumbnail}
-              placeholder="Enter thumbnail image URL"
+              defaultValue={state?.tutorImage}
+              placeholder="Enter Tutor image URL"
               className="input input-bordered w-full"
               required
             />
@@ -129,13 +129,13 @@ const UpdateTutorialForm = () => {
           {/* Tutor Image URL */}
           <label className="form-control w-full col-span-12 sm:col-span-6">
             <div className="label">
-              <span className="label-text">Tutor Image*</span>
+              <span className="label-text">Tutorial Image*</span>
             </div>
             <input
               name="image"
               type="url"
               defaultValue={state?.image}
-              placeholder="Enter image link URL"
+              placeholder="Enter tutorial image URL"
               className="input input-bordered w-full"
               required
             />

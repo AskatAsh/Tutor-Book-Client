@@ -1,9 +1,64 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Button from "./../components/Button";
+import Swal from "sweetalert2";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
+import useAuthContext from "./../hooks/useAuthContext";
 
 const AddTutorials = () => {
-  const handleAddTutorial = (e) => {
+  const { user } = useAuthContext();
+
+  const handleAddTutorial = async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const image = form.image.value;
+    const language = form.language.value;
+    const price = parseInt(form.price.value);
+    const review = parseInt(form.review.value);
+    const description = form.description.value;
+    const tutorialData = {
+      name: user?.displayName,
+      email: user?.email,
+      title,
+      tutorImage: user?.photoURL,
+      image,
+      language,
+      price,
+      review,
+      description,
+    };
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_SERVER}/addTutorial`,
+        tutorialData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200 || response.status === 201) {
+        // succes message
+        Swal.fire({
+          icon: "success",
+          title: "Add Tutorial",
+          text: "Tutorial Added Successfully!",
+        });
+        Navigate("/myTutorials");
+      }
+    } catch (error) {
+      // console.log("Error: ", error);
+      // failure message
+      Swal.fire({
+        icon: "error",
+        title: "Adding Tutorial Failed",
+        text:
+          error.response?.data?.message ||
+          "An error occurred. Please try again later.",
+      });
+    }
   };
 
   return (
@@ -18,7 +73,10 @@ const AddTutorials = () => {
       <section className="max-w-4xl mx-auto w-11/12 overflow-hidden py-16 md:py-20">
         <h1 className="text-4xl font-bold text-center my-10">Add Tutorial</h1>
         {/* Add job form */}
-        <form onSubmit={handleAddTutorial} className="grid grid-cols-12 gap-5 bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 sm:p-6 md:p-8 border dark:border-gray-700">
+        <form
+          onSubmit={handleAddTutorial}
+          className="grid grid-cols-12 gap-5 bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 sm:p-6 md:p-8 border dark:border-gray-700"
+        >
           {/* Name */}
           <label className="form-control w-full col-span-12 sm:col-span-6">
             <div className="label">
@@ -27,6 +85,7 @@ const AddTutorials = () => {
             <input
               name="name"
               type="text"
+              defaultValue={user?.displayName}
               placeholder="Enter HR name"
               className="input input-bordered w-full"
               disabled
@@ -40,15 +99,29 @@ const AddTutorials = () => {
             <input
               name="email"
               type="email"
+              defaultValue={user?.email}
               placeholder="e.g. name@gmail.com"
               className="input input-bordered w-full"
               disabled
             />
           </label>
-          {/* Image URL */}
+          {/* Tutorial title */}
           <label className="form-control w-full col-span-12 sm:col-span-6">
             <div className="label">
-              <span className="label-text">Image*</span>
+              <span className="label-text">Tutorial Title*</span>
+            </div>
+            <input
+              name="title"
+              type="text"
+              placeholder="Enter Tutorial Title"
+              className="input input-bordered w-full"
+              required
+            />
+          </label>
+          {/* Thumbnail Image URL */}
+          <label className="form-control w-full col-span-12 sm:col-span-6">
+            <div className="label">
+              <span className="label-text">Tutorial Image*</span>
             </div>
             <input
               name="image"
@@ -72,7 +145,7 @@ const AddTutorials = () => {
             />
           </label>
           {/* Price */}
-          <label className="form-control w-full col-span-12 sm:col-span-6">
+          <label className="form-control w-full col-span-12 sm:col-span-3">
             <div className="label">
               <span className="label-text">Price*</span>
             </div>
@@ -85,12 +158,12 @@ const AddTutorials = () => {
             />
           </label>
           {/* Review */}
-          <label className="form-control w-full col-span-12 sm:col-span-6">
+          <label className="form-control w-full col-span-12 sm:col-span-3">
             <div className="label">
               <span className="label-text">Review*</span>
             </div>
             <input
-              name="price"
+              name="review"
               type="number"
               defaultValue={0}
               placeholder="Enter Price"
