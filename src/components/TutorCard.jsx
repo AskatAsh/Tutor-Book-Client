@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
 
 const TutorCard = ({ tutorial }) => {
-  const { _id, name, image, language, description, price, review } = tutorial;
+  const { _id, name, tutorImage, language, description, price, review } = tutorial;
   return (
     <div className="col-span-12 md:col-span-6 p-4 md:p-6 bg-white dark:bg-gray-800 dark:bg-opacity-30 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300">
       {/* Left Section */}
       <div className="flex flex-col lg:flex-row items-start gap-4">
         {/* Logo */}
         <div className="w-14 h-14 overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-gray-800 rounded-lg">
-          <img src={image} alt="Tutorial Image" className="object-cover" />
+          <img src={tutorImage} alt="Tutorial Image" className="object-cover" />
         </div>
 
         {/* Tutor Info */}

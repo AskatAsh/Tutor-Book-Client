@@ -56,7 +56,7 @@ const RegisterForm = () => {
         setUser(newUser);
         form.reset();
         toast.success("Account created Successfully!");
-        console.log(newUser);
+        // console.log(newUser);
         // update user with name and image url
         const profile = { displayName: username, photoURL: image };
         updateUser(profile)

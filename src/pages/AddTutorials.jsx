@@ -4,8 +4,10 @@ import Swal from "sweetalert2";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import useAuthContext from "./../hooks/useAuthContext";
+import { useState } from "react";
 
 const AddTutorials = () => {
+  const [redirect, setRedirect] = useState(false);
   const { user } = useAuthContext();
 
   const handleAddTutorial = async (e) => {
@@ -38,7 +40,6 @@ const AddTutorials = () => {
           },
         }
       );
-
       if (response.status === 200 || response.status === 201) {
         // succes message
         Swal.fire({
@@ -46,7 +47,7 @@ const AddTutorials = () => {
           title: "Add Tutorial",
           text: "Tutorial Added Successfully!",
         });
-        Navigate("/myTutorials");
+        setRedirect(true);
       }
     } catch (error) {
       // console.log("Error: ", error);
@@ -60,6 +61,10 @@ const AddTutorials = () => {
       });
     }
   };
+
+  if (redirect) {
+    return <Navigate to="/myTutorials" />;
+  }
 
   return (
     <div>

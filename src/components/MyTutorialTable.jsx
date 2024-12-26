@@ -12,7 +12,7 @@ const MyTutorialTable = ({ myTutorialsData = [] }) => {
   const [myTutorials, setMyTutorials] = useState(myTutorialsData);
 
   const handleDeleteTutorial = (id) => {
-    console.log(id);
+    // console.log(id);
 
     Swal.fire({
       title: "Are you sure?",
