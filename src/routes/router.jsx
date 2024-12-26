@@ -11,6 +11,7 @@ import Login from './../pages/auth/Login';
 import Register from './../pages/auth/Register';
 import FindCategoryTutors from "../pages/FindCategoryTutors";
 import MyBookedTutors from './../pages/MyBookedTutors';
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -23,15 +24,15 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addTutorials',
-                element: <AddTutorials />
+                element: <PrivateRoutes><AddTutorials /></PrivateRoutes>
             },
             {
                 path: '/myTutorials',
-                element: <MyTutorials />
+                element: <PrivateRoutes><MyTutorials /></PrivateRoutes>
             },
             {
-                path: '/updateTutorial',
-                element: <UpdateTutorial />
+                path: '/updateTutorial/:id',
+                element: <PrivateRoutes><UpdateTutorial /></PrivateRoutes>
             },
             {
                 path: '/findTutors',
@@ -43,11 +44,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myBookedTutor',
-                element: <MyBookedTutors />
+                element: <PrivateRoutes><MyBookedTutors /></PrivateRoutes>
             },
             {
                 path: '/tutor/:details',
-                element: <TutorDetails />
+                element: <PrivateRoutes><TutorDetails /></PrivateRoutes>
             },
             {
                 path: '/auth/login',
