@@ -34,7 +34,7 @@ const useGetBookedTutors = (email) => {
     } finally {
       setIsLoading(false);
     }
-  }, [email]);
+  }, [axiosInstance, email]);
 
   useEffect(() => {
     getMyBookedTutors();
