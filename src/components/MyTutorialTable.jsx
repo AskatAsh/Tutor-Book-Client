@@ -82,11 +82,11 @@ const MyTutorialTable = ({ myTutorialsData = [] }) => {
                     <img
                       className="w-14 h-14 bg-gray-100 dark:bg-gray-800 rounded-md"
                       src={tutorial?.image}
-                      alt={`image of ${name}`}
+                      alt={`image of the tutorial`}
                     />
                     <div>
                       <h2 className="text-gray-800 dark:text-gray-300 font-medium text-lg pb-2">
-                        {tutorial?.name}
+                        {tutorial?.title}
                       </h2>
                       <ul className="flex items-center gap-3 text-sm flex-wrap">
                         <li className="flex items-center gap-2 flex-shrink-0">
