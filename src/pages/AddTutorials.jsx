@@ -13,7 +13,7 @@ const AddTutorials = () => {
     const form = e.target;
     const title = form.title.value;
     const image = form.image.value;
-    const language = form.language.value;
+    const language = form.language.value.toLowerCase();
     const price = parseInt(form.price.value);
     const review = parseInt(form.review.value);
     const description = form.description.value;

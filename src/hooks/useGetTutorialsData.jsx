@@ -35,7 +35,7 @@ const useGetTutorialsData = () => {
     getTutorialsData();
   }, [getTutorialsData]);
 
-  return [tutorialsData, isLoading, errorMessage, getTutorialsData];
+  return [tutorialsData, setTutorialsData, isLoading, errorMessage, getTutorialsData];
 };
 
 export default useGetTutorialsData;
