@@ -28,7 +28,7 @@ const Banner = () => {
             <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
               Personalized Learning, Anytime, Anywhere.
             </h2>
-            <p className="text-gray-600 bg-white bg-opacity-70 px-6 py-1 mx-2 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
+            <p className="text-gray-600 text-sm sm:text-base lg:text-lg bg-white bg-opacity-70 px-2 md:px-6 py-1 mx-4 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
               TutorBook connects you with expert tutors for tailored learning on
               your schedule, wherever you are.
             </p>
@@ -44,7 +44,7 @@ const Banner = () => {
             <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
               Your Gateway to Academic Success.
             </h2>
-            <p className="text-gray-600 bg-white bg-opacity-70 px-6 py-1 mx-2 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
+            <p className="text-gray-600 text-sm sm:text-base lg:text-lg bg-white bg-opacity-70 px-2 md:px-6 py-1 mx-4 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
               Achieve your goals with TutorBook. Find top tutors, book sessions
               easily, and excel in any subject.
             </p>
@@ -60,7 +60,7 @@ const Banner = () => {
             <h2 className="text-3xl md:text-4xl lg:text-6xl text-gray-900 dark:text-white font-extrabold">
               Personalized Learning, Anytime, Anywhere.
             </h2>
-            <p className="text-gray-600 bg-white bg-opacity-70 px-6 py-1 mx-2 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
+            <p className="text-gray-600 text-sm sm:text-base lg:text-lg bg-white bg-opacity-70 px-2 md:px-6 py-1 mx-4 dark:bg-gray-700 dark:bg-opacity-70 dark:text-white">
               TutorBook matches you with the perfect tutor to help you master
               subjects and achieve your dreams.
             </p>
