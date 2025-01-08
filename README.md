@@ -18,10 +18,11 @@ Check out the live version of the project:
 ## 💡 **Key Features**
 - **Responsive Design:** Fully responsive across mobile, tablet, and desktop.
 - **Authentication System:** Email/password login, Google login, account recovery, and protected routes.
-- **Job Management:** Add, update, delete, and view job postings.
-- **Job Search & Filters:** Search jobs by title and filter by job type, experience level, and salary range.
-- **Job Applications:** Apply for jobs with detailed forms and manage your applications.
-- **Employer Tools:** Employers can review applications, update jobs, and manage postings.
+- **Tutor Management:** Add, update, delete, and view tutors.
+- **Tutor Search & Filters:** Search tutors by language and filter by tutor language.
+- **Add Tutorials:** Tutors can add their details and tutorials.
+- **My Tutorials:** Tutors can view their added tutorials with update and delete actions.
+- **My Books Tutors:** Students can see their booked tutors, add review.
 - **Error Handling:** User-friendly error messages and loading indicators.
 - **Session Management:** Secure session management with JWT tokens.
 
@@ -30,17 +31,18 @@ Check out the live version of the project:
 ## 🖌️ **Application Pages**
 
 ### Public Pages
-- **Home Page (/):** Displays available job within deadline postings with essential information and dynamic routing to job details.
+- **Home Page (/):** Displays banner and language categories for tutors with essential information and link to find tutors page.
+
+- **Find Tutors (/findTutors):** View all Tutors, search, filter, and sort by language.
   
 ### Protected Pages
-- **All Jobs (/allJobs):** View all jobs, search, filter, and sort by deadline.
-- **Job Details (/jobDetails/:id):** Detailed job information and application options.
-- **Add Job (/addJob):** Form for creating job postings with employer details.
-- **Apply for a Job (/jobApply/:id):** Form for submitting job applications with user and job-specific details.
-- **My Applications (/myApplications):** View and manage submitted applications.
-- **My Job Posts (/myPostedJobs):** Manage posted jobs and navigate to related actions.
-- **Review Applications (/viewApplications/:job_id):** Review job applications with status management options.
-- **Update Job (/allJobs/update/:id):** Update job information.
+- **Tutor Details (/tutor/:details):** Detailed Tutor information and Book Tutor option.
+- **Add Tutorials (/addTutorials):** Form for adding tutorials with tutor details.
+- **Book a Tutor (/tutor/:id):** A Book Tutor button in tutor details page to book that tutor
+- **My Booked Tutors (/myBookedTutor):** View and review booked tutors.
+- **My Tutorials (/myTutorials):** Manage posted Tutorials with update and delete actions.
+- **Find Tutors (/findTutors/:category):** Find one or more tutors by language category.
+- **Update Tutorial (/updateTutorial/:id):** Update a posted Tutorial information.
 
 ---
 
@@ -64,21 +66,23 @@ Check out the live version of the project:
 ## 🧩 **Dependencies**
 - "axios": "^1.7.9",
 - "date-fns": "^4.1.0",
-- "firebase": "^11.0.2",
-- "motion": "^11.14.1",
+- "firebase": "^11.1.0",
+- "lottie-react": "^2.4.0",
+- "motion": "^11.15.0",
 - "react": "^18.3.1",
 - "react-dom": "^18.3.1",
+- "react-helmet-async": "^2.0.5",
 - "react-hot-toast": "^2.4.1",
 - "react-icons": "^5.4.0",
-- "react-router-dom": "^7.0.2",
-- "react-sweetalert2": "^0.6.0",
-- "reactive-button": "^1.3.15"
+- "react-router-dom": "^7.1.1",
+- "sweetalert2": "^11.15.3",
+- "swiper": "^11.1.15"
 
 ---
 ## 📁 **Run in Local Machine**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/AskatAsh/Job-portal-client.git
+   git clone https://github.com/AskatAsh/Tutor-Book-client.git
 
 2. Navigate to the project directory:
    ```bash
@@ -93,38 +97,13 @@ Check out the live version of the project:
    npm run dev
 
 ---
-
-## 🚀 **Features Checklist**
-### **Authentication System**
-- User registration and login with email/password or Google Authentication.
-- Password recovery system with input validation.
-- Protected routes for all pages except landing and authentication pages.
-
-### **Job Functionality**
-- Full CRUD operations for jobs.
-- Search and filter by job type, experience level, and salary range.
-- Sort by application deadline.
-
-### **Application Process**
-- Form for submitting applications with personal and job-specific details.
-- Manage applications with withdrawal options.
-
-### **Employer Tools**
-- View, edit, and delete job postings.
-- Review applications with dropdown actions (Rejected, Shortlisted, Hired, Scheduled).
-
-### **Security**
-- Secure session management with JWT tokens.
-- Authorization for API routes.
-
----
 ## 📜 **Best Practices Followed**
 
 ### 🧹 **Code Quality**
 - **Modular Code:** Code is divided into reusable components and modules for better maintainability.
 - **Clean and Readable:** Proper indentation, meaningful variable names, and comments for clarity.
 - **DRY Principle:** Reused logic to avoid redundancy and ensure maintainability.
-- **Consistent Naming Conventions:** Followed camelCase for variables and functions, and PascalCase for components.
+- **Consistent Naming Conventions:** Followed camelCase for variables and functions, and also for components.
 
 ### 🚦 **Error Handling**
 - **Frontend Errors:** Clear and user-friendly error messages are displayed for invalid inputs, failed requests, or other issues.
