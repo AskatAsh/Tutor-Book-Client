@@ -63,6 +63,18 @@ const Navbar = () => {
           Find Tutors
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-transparent font-semibold text-green-500 dark:text-green-400 focus:bg-transparent focus:text-green-500"
+              : ""
+          }
+          to="/aboutus"
+        >
+          About Us
+        </NavLink>
+      </li>
 
       {user && user?.email ? (
         <>

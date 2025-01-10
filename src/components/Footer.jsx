@@ -27,7 +27,7 @@ const Footer = () => {
               </p>
               <p className="flex items-start gap-2">
                 <IoIosMailOpen size={20} />
-                <span className="text-sm">support@jobhub.com</span>
+                <span className="text-sm">support@tutorbook.com</span>
               </p>
             </div>
             <div className="text-gray-800 dark:text-gray-500 mt-5 space-y-2 mr-4">
@@ -90,11 +90,11 @@ const Footer = () => {
               </li>
 
               <li>
-                <FooterLinks linkText="About Us" linkPath="#" />
+                <FooterLinks linkText="About Us" linkPath="/aboutus" />
               </li>
 
               <li>
-                <FooterLinks linkText="Contact" linkPath="#" />
+                <FooterLinks linkText="Contact Us" linkPath="/contactus" />
               </li>
             </ul>
           </div>

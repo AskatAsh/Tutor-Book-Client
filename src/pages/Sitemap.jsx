@@ -7,6 +7,14 @@ const Sitemap = () => {
       name: "Home",
     },
     {
+      path: "/aboutus",
+      name: "About Us",
+    },
+    {
+      path: "/contactus",
+      name: "Contact Us",
+    },
+    {
       path: "/addTutorials",
       name: "Add Tutorials",
     },

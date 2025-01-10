@@ -15,6 +15,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Sitemap from "../pages/Sitemap";
 import TermsOfUse from "../pages/TermsOfUse";
 import Accessibility from "../pages/Accessibility";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,14 @@ const router = createBrowserRouter([
       {
         path: "/auth/register",
         element: <Register />,
+      },
+      {
+        path: "/aboutus",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contactus",
+        element: <AboutUs />,
       },
       {
         path: "/sitemap",
