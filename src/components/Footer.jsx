@@ -106,7 +106,7 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-5">
               <li>
-                <FooterLinks linkText="Site Map" linkPath="#" />
+                <FooterLinks linkText="Site Map" linkPath="/sitemap" />
               </li>
 
               <li>

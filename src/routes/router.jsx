@@ -12,6 +12,7 @@ import FindCategoryTutors from "../pages/FindCategoryTutors";
 import MyBookedTutors from './../pages/MyBookedTutors';
 import PrivateRoutes from "./PrivateRoutes";
 import ErrorPage from "../pages/ErrorPage";
+import Sitemap from "../pages/Sitemap";
 
 const router = createBrowserRouter([
     {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
             {
                 path: '/auth/register',
                 element: <Register />
+            },
+            {
+                path: '/sitemap',
+                element: <Sitemap />
             }
         ]
     },
