@@ -37,7 +37,7 @@ const FindTutors = () => {
           // succes message
           console.log(response);
           setTutorialsData(response.data);
-          toast.success(`${response.data.length} results found!`)
+          toast.success(`${response.data.length} results found!`);
         }
       } catch (error) {
         // console.log("Error: ", error);
@@ -53,6 +53,11 @@ const FindTutors = () => {
     }
   };
 
+  // sort tutor handler
+  const handleSortTutorsByPrice = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div>
       <HelmetProvider>
@@ -63,29 +68,46 @@ const FindTutors = () => {
 
       {/* Tutorials from database */}
       <section className="max-w-7xl w-11/12 mx-auto py-16 md:py-20">
-        <h1 className="text-4xl font-bold text-center my-10">
+        <h1 className="text-2xl sm:text-4xl font-bold text-center my-10">
           Explore and Find Tutors
         </h1>
         <form
           onSubmit={handleSearchTutors}
-          className="max-w-xl w-11/12 mx-auto mb-10"
+          className="w-full mx-auto mb-10 flex flex-col sm:flex-row items-center justify-between gap-6"
         >
-          <label className="input input-bordered rounded-full flex items-center gap-2 py-8 px-0 pl-6 pr-2">
+          {/* search input */}
+          <label className="input input-bordered rounded-full flex items-center gap-2 py-7 px-0 pl-6 pr-1 max-w-xl w-full">
             <input
               name="category"
               type="text"
-              className="grow bg-green-500 text-lg"
+              className="grow bg-green-500 text-lg min-w-8"
               placeholder="Search by language (e.g. English, Bengali etc.)"
             />
             <button
               type="submit"
-              className="btn btn-md btn-circle border-none tooltip tooltip-top flex items-center justify-center"
-              data-tip="click to search"
+              className="btn btn-md btn-circle border-none flex items-center justify-center"
+              title="Click or Enter"
             >
               <IoSearch size={20} />
             </button>
           </label>
+          {/* select sort by price options */}
+          <label className="flex items-center gap-2">
+            <select
+              onChange={handleSortTutorsByPrice}
+              defaultValue={""}
+              className="select select-bordered select-md grow text-gray-600 dark:text-gray-400"
+            >
+              <option value={""} disabled>
+                Sort by Price
+              </option>
+              <option value={""}>Default</option>
+              <option value={"low2high"}>Price Low to High</option>
+              <option value={"high2low"}>Price High to Low</option>
+            </select>
+          </label>
         </form>
+
         {/* show tutorial data in grid */}
         {isLoading ? (
           <Loading />
@@ -95,7 +117,7 @@ const FindTutors = () => {
             onRetry={() => getTutorialsData()}
           />
         ) : (
-          <div className="grid grid-cols-12 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {tutorialsData.map((tutorial) => (
               <TutorCard key={tutorial._id} tutorial={tutorial} />
             ))}
