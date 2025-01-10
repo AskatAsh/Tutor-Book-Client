@@ -19,10 +19,10 @@ const Home = () => {
       <Stats />
       {/* Categories Section */}
       <Categories />
-      {/* Students Testimonials */}
-      <TestimonialsSection />
       {/* Featured Tutors Section */}
       <FeaturedTutors />
+      {/* Students Testimonials */}
+      <TestimonialsSection />
     </div>
   );
 };
