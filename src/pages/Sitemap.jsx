@@ -46,6 +46,10 @@ const Sitemap = () => {
       path: "/sitemap",
       name: "Sitemap",
     },
+    {
+      path: "/terms-of-use",
+      name: "Terms of Use",
+    },
   ];
 
   return (

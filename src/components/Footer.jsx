@@ -110,7 +110,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <FooterLinks linkText="Terms of Use" linkPath="#" />
+                <FooterLinks linkText="Terms of Use" linkPath="/terms-of-use" />
               </li>
 
               <li>
