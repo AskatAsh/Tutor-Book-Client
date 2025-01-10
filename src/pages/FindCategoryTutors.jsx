@@ -34,7 +34,7 @@ const FindCategoryTutors = () => {
         ) : (
           <>
             {tutorialsData.length > 0 ? (
-              <div className="grid grid-cols-12 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {tutorialsData.map((tutorial) => (
                   <TutorCard key={tutorial._id} tutorial={tutorial} />
                 ))}

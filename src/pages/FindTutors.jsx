@@ -37,7 +37,7 @@ const FindTutors = () => {
 
         if (response.status === 200 || response.status === 201) {
           // succes message
-          console.log(response);
+          // console.log(response);
           setTutorialsData(response.data);
           toast.success(`${response.data.length} results found!`);
         }
