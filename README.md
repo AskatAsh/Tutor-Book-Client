@@ -2,7 +2,7 @@
 
 This project is an Online Tutor Booking Platform, designed to connect users with tutors across various languages and subjects. It simplifies the process of finding, reviewing, and booking tutors through an interactive and user-friendly interface. The platform is essential for promoting accessible learning opportunities globally and streamlining the tutor hiring process. Users can browse categories, view detailed tutor profiles, and book sessions securely. Features like adding tutorials, managing bookings, and reviewing tutors enhance user engagement.
 
-![Project Screenshot](https://i.ibb.co/kKzTCLm/download.png)  
+![Project Screenshot](https://i.ibb.co/nmZKfF5/Tutor-Book-Screenshot.webp)  
 *A representative screenshot of the project.*
 
 ---
