@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
-const useGetTutorialsData = () => {
+const useGetTutorialsData = (sortBy = "") => {
   const [tutorialsData, setTutorialsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState({});
@@ -10,7 +10,7 @@ const useGetTutorialsData = () => {
     try {
       setIsLoading(true);
       // get Tutorials
-      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/findTutorials`);
+      const { data } = await axios.get(`${import.meta.env.VITE_SERVER}/findTutorials?sortBy=${sortBy}`);
       setTutorialsData(data);
     } catch (error) {
       // handle errors
@@ -29,7 +29,7 @@ const useGetTutorialsData = () => {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [sortBy]);
 
   useEffect(() => {
     getTutorialsData();

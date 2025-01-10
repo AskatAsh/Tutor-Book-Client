@@ -7,15 +7,17 @@ import { IoSearch } from "react-icons/io5";
 import axios from "axios";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 const FindTutors = () => {
+  const [sortBy, setSortBy] = useState("");
   const [
     tutorialsData,
     setTutorialsData,
     isLoading,
     errorMessage,
     getTutorialsData,
-  ] = useGetTutorialsData();
+  ] = useGetTutorialsData(sortBy);
 
   const handleSearchTutors = async (e) => {
     e.preventDefault();
@@ -56,6 +58,7 @@ const FindTutors = () => {
   // sort tutor handler
   const handleSortTutorsByPrice = (e) => {
     e.preventDefault();
+    setSortBy(e.target.value);
   };
 
   return (
