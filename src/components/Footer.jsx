@@ -114,7 +114,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <FooterLinks linkText="Accessibility" linkPath="#" />
+                <FooterLinks linkText="Accessibility" linkPath="/accessibility" />
               </li>
             </ul>
           </div>

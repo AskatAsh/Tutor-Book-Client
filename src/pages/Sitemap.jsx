@@ -50,6 +50,10 @@ const Sitemap = () => {
       path: "/terms-of-use",
       name: "Terms of Use",
     },
+    {
+      path: "/accessibility",
+      name: "Accessibility",
+    },
   ];
 
   return (

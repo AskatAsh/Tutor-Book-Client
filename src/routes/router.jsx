@@ -14,6 +14,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import ErrorPage from "../pages/ErrorPage";
 import Sitemap from "../pages/Sitemap";
 import TermsOfUse from "../pages/TermsOfUse";
+import Accessibility from "../pages/Accessibility";
 
 const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: "/terms-of-use",
         element: <TermsOfUse />,
+      },
+      {
+        path: "/accessibility",
+        element: <Accessibility />,
       },
     ],
   },
