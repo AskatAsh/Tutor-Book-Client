@@ -50,22 +50,15 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-5">
               <li>
-                <FooterLinks linkText="Search Tutorials" linkPath="#" />
+                <FooterLinks linkText="Search Tutors" linkPath="/findTutors" />
               </li>
 
               <li>
-                <FooterLinks linkText="Categories" linkPath="#" />
+                <FooterLinks linkText="Categories" linkPath="/" />
               </li>
 
               <li>
-                <FooterLinks linkText="Dashboard" linkPath="#" />
-              </li>
-
-              <li>
-                <FooterLinks linkText="Tutorial Alerts" linkPath="#" />
-              </li>
-              <li>
-                <FooterLinks linkText="My Tutorials" linkPath="#" />
+                <FooterLinks linkText="Booked Tutors" linkPath="/myBookedTutor" />
               </li>
             </ul>
           </div>
@@ -77,19 +70,11 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-4">
               <li>
-                <FooterLinks linkText="Search Tutorials" linkPath="#" />
+                <FooterLinks linkText="Tutors Dashboard" linkPath="/myTutorials" />
               </li>
 
               <li>
-                <FooterLinks linkText="Tutors Dashboard" linkPath="#" />
-              </li>
-
-              <li>
-                <FooterLinks linkText="Add Tutorials" linkPath="#" />
-              </li>
-
-              <li>
-                <FooterLinks linkText="Tutorial Packages" linkPath="#" />
+                <FooterLinks linkText="Add Tutorials" linkPath="/addTutorials" />
               </li>
             </ul>
           </div>
@@ -101,20 +86,13 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-5">
               <li>
-                <FooterLinks linkText="Home" linkPath="#" />
+                <FooterLinks linkText="Home" linkPath="/" />
               </li>
 
               <li>
                 <FooterLinks linkText="About Us" linkPath="#" />
               </li>
 
-              <li>
-                <FooterLinks linkText="Terms Page" linkPath="#" />
-              </li>
-
-              <li>
-                <FooterLinks linkText="Blog" linkPath="#" />
-              </li>
               <li>
                 <FooterLinks linkText="Contact" linkPath="#" />
               </li>
@@ -135,13 +113,6 @@ const Footer = () => {
                 <FooterLinks linkText="Terms of Use" linkPath="#" />
               </li>
 
-              <li>
-                <FooterLinks linkText="Privacy Center" linkPath="#" />
-              </li>
-
-              <li>
-                <FooterLinks linkText="Security Center" linkPath="#" />
-              </li>
               <li>
                 <FooterLinks linkText="Accessibility" linkPath="#" />
               </li>
